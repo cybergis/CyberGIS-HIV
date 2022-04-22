@@ -1,0 +1,132 @@
+variable,short_name
+PopEstimate,annual resident POP estimates
+UnemploymentRate16p,unemployment rate 
+nDaysMeasuredAirQualityGood,number of days measured air quality good
+xGoodAirQualityDays,% of good air quality days
+NumberHHs,number of households
+%UrbanPop,% urban POP
+%UrbanHousingUnits,% urban housing units
+xFamiliesBelowPovertyLevel,% families below poverty 
+xDisabledle18CivilNoninstl,% disability for civilian noninstitutionalize POP less than 18 
+xDisabled1864CivilNoninstl,% disability for civilian noninstitutionalize 18-64 years old
+xDisabled65pCivilNoninstl,% disability for civilian noninstitutionalize POP older than 65 
+xDidNotWork1664,% people aged 16-64 who didn't work
+xAgricForestFishHuntMineWorkers,% Agricultural/Forestry/Fisheries/Hunting/Mining workers
+xConstructionWorkers,% Construction workers
+xEducHealthSocAssWorkers,"% Educational Services, and Health Care and Social Assistance workers"
+xManufacturingWorkers,% Manufacturing workers
+xWorkersinOtherIndustries,% workers in other industries
+nWorkersMeantraveltime16p,"number of workers, mean travel time, 16 +"
+xFemalesDivorced,% females divorced
+5YrTotInfantMortRatele1yr,total infant mortality 
+syphilis_rate,Syphilis Rate
+chlamydia_rate,chlamydia rate
+gonorrhea_rate,gonorrhea rate
+knowledge,Knowledge
+linkage,Linkage to Care
+Rate,HIV Rate
+suppression_per,viral suppression
+hivmedic_per,receipt of HIV medication
+hcv,HCV Death
+opioid_prsc,Opioid Prescriptions
+hivtst,HIV Test
+PopMale1519_r,% male POP at age group 15-19 
+PopMale2024_r,% male POP at age group 20-24
+PopMale2544_r,% male POP at age group 25-44
+PopMale4564_r,% male POP at age group 45-64
+PopMale65p_r,% male POP at age group 65 +
+PopFemale1519_r,% female POP at age group 15-19
+PopFemale2024_r,% female POP at age group 20-24
+PopFemale2544_r,% female POP at age group 25-44
+PopFemale4564_r,% female POP at age group 45-64
+PopFemale65p_r,% female POP at age group 65 +
+PopTotalMale_r,% the POP as Male
+PopWhite_r,% White POP
+PopBlackAfrAm_r,% Black African American POP
+PopAsian_r,% Asian POP
+PopTotHispLatino_r,% Hispanic POP
+PopAmerIndAlaskaNat_r,% American Indian/Alaska Native POP
+PopNatHawOthPacIsl_r,%  Native Hawaiian/other Pacific Islander POP
+PopTwopRaces_r,% Two or more races POP
+MedicareEnrollmentAgedDisabledTot_r,% POP on Medicare
+Persons1864HealthInsurance_r,% POP w/ Health Insurance (18-64)
+Personsle19HealthInsurance_r,% POP w/ Health Insurance (<19)
+PersonsinPoverty_r,% Persons Age 0-17 in Poverty
+FoodStampSNAPRecipientEstimate_r,% people as Food Stamp/SNAP Recipients 
+nHousingUnitsEstimate_r,number of Housing Unit per person
+Persons25pYrsWleHSDiploma_r,% persons 25 years or older with less than high school diploma
+Persons25pWHSDiplOrMore_r,% persons 25 years or older with a high school or more
+nWorkersDriveAlone16p_r,% workers who drive alone to work
+nWorkersCarpool16p_r,% workers who use carpool to work
+nWorkersPublicTrans16p_r,% workers who use public transportation to go to work
+nWorkersWalktoWork16p_r,% workers who walk to work
+nWorkersOtherMeansofTrans16p_r,% workers who use other means of transportation to work
+nWorkersWorkatHome16p_r,% workers who work at home
+nWorkersle5mintoWork16p_r,% workers with mean travel time of less than 5 minutes to work
+nWorkers59mintoWork16p_r,% workers with mean travel time of 5-9 minutes to work 
+nWorkers1014mintoWork16p_r,% workers with mean travel time of 10-14 minutes to work 
+nWorkers1519mintoWork16p_r,% workers with mean travel time of 15-20 minutes to work 
+nWorkers2029mintoWork16p_r,% workers with mean travel time of 20-29 minutes to work 
+nWorkers3044mintoWork16p_r,% workers with mean travel time of 30-44 minutes to work 
+nWorkers4559mintoWork16p_r,% workers with mean travel time of 45-59 minutes to work 
+nWorkers6089mintoWork16p_r,% workers with mean travel time of 60-89 minutes to work 
+nWorkers90pmintoWork16p_r,% workers with mean travel time of more than 90 minutes to work 
+nOccupiedHousingUnits_r,number of occupied housing units 
+3YearIschemicHeartDisDeaths_n,% ischemic heart disease deaths 
+MedianHHIncome_l,Median Household Income 
+PerCapitaPersonalIncome_l,Per Capita Personal Income
+illicit_l,Illicit Drug Use Rate
+marijuana_l,Marijuana Use 
+marijuana_init_l,First Use of Marijuana
+cocaine_l,Cocaine Use
+alcohol_l,Alcohol Use 
+tobacco_l,Tobacco Product Use
+cigar_l,Cigarette Use 
+mental_severe_l,Serious Mental Illness
+mental_l,Any Mental Illness 
+suicide_l,Had Serious Thoughts of Suicide
+MedianHomeValue_l,median home value
+MedianGrossRent_l,merdian gross rent
+HHIncomeUnder10000_l,"household income, less than $10,000"
+depress_l,Major Depressive Episode 
+TotalHospitalBeds_r_l,total hospital beds per person 
+PhysNFPrimCarePatCareExclHspRsdnts_r_l,"Physicians, Excluding Hospital Residents "
+PhysNFPrimCarePatCareHospRsdnts_r_l,"Physicians, Hospital Residents per person"
+MDsNonFedTotGenPractTotal_r_l,"Medical Doctors, Total General Practice"
+MDsNFGenIntMedTotPatCare_r_l,"Medical Doctors, General Internal Medicine,"
+PhysicianAssistantswNPI_r_l,Physician Assistants 
+PopinJuvenilleFacilities_r_l,POP in Juvenille Facilities
+AdvPracticeRegisteredNurseswNPIAPRN_r_l,Advanced Practice Nurse Midwives
+NursePractitionerswNPI_r_l,Nurse Practitioners
+STGHospwEmergencyDepartment_r_l,Short Term General Hospitals with Emergency Department
+nHomeHealthAgencies_r_l,Home Health Agencies 
+nCommunityMentalHealthCtrs_r_l,Community Mental Health centers 
+nFedQualifiedHealthCenters_r_l,Federally Qualified Health Centers 
+nCommunityHealthCenters_r_l,Community Health
+nRuralHealthClinics_r_l,Rural Health Clinics 
+nNHSCPrimaryCareSiteswProv_r_l,NHSC Primary Care sites 
+nNHSCMentalHealthSiteswProv_r_l,NHSC Mental Health sites
+TotalNumberHospitals_r_l,Hospitals 
+AdvPracticeNurseMidwiveswNPI_r_l,Advanced Practice Registered Nurses 
+prep_rate_l,PrEP use
+nHHs2Persons_r,% households with 2 persons
+nHHs3Persons_r,% households with 3 persons
+nHHs4Persons_r,% households with 4 persons
+nHHs5Persons_r,% households with 5 persons
+nHHs6ormorePersons_r,% households with 6 or more persons
+HHswSupplemntlSecurityInc_r,% Households with SSI
+HHswPublicAssistanceInc_r,% Households with Public Assistance Income 
+nSingleParentHHs_r,% single parent households
+UnmarriedPartnerHHDiffSex_r,% households as unmarried partner with different sex
+UnmarriedPartnerHHMale_r,% households as unmarried male partner 
+UnmarriedPartnerHHFemale_r,% households as unmarried female partner 
+StateName,state name
+State,state
+CountyName,name of county
+CountyNameStateAbbrev,name of county with state abbreviation
+FIPSStateCode,two digit state FIPS code
+FIPSCountyCode,three digit county FIPS code
+FederalRegionCode,These are the codes for the ten Federal Regional Offices from the Department of Health and Human Services.
+CensusRegionCode,The Census Region Codes and Names and Census Division Codes and Names were taken from the ORP HSA ACCESS System.
+urbanizationizationlevel,% African American POP
+MSM_count_l,MSM counts
