@@ -28,7 +28,7 @@ from IPython.display import clear_output
 from ipywidgets import Layout, Button, Box, FloatText, Textarea, Dropdown, Label, IntSlider, RadioButtons, VBox, HBox, Text, BoundedIntText
 import ipywidgets as widgets
 
-#Create directory for Visualization
+## Define Paths for Visualization
 servers = list(notebookapp.list_running_servers())
 # servers1 = 'https://cybergisx.cigi.illinois.edu'+servers[0]["base_url"]+ 'view'
 # servers2 = 'https://cybergisx.cigi.illinois.edu'+servers[0]["base_url"]+ 'edit'
@@ -50,6 +50,24 @@ cwd = cwd.replace(prefix_cwd, "")
 # This is for CyberGISX. Uncomment two command lines below when you run in CyberGIX Environment
 local_dir1 = servers1 + cwd + '/'
 local_dir2 = servers2 + cwd + '/'
+
+### DOWNLOAD `saved_results.rda` from Google drive
+if os.path.exists('./Results/saved_results.rda'):
+    pass
+else:
+    import gdown
+    import zipfile
+
+    # Download file from Google Drive
+    output = "./R_Results.zip"
+    gdown.download(
+        "https://drive.google.com/uc?export=download&confirm=pbef&id=1Z2mroWg8_wwRdO7rYT1kqVVU7vUGbVqA",
+        output
+    )
+
+    # Unzip the downloaded file from Google Drive
+    with zipfile.ZipFile('./R_Results.zip', 'r') as zip_ref:  # zip file needs to be unzipped
+        zip_ref.extractall('./')  # destination directory
 
 
 def write_INDEX_html(param, oDir):
@@ -879,20 +897,7 @@ if __name__ == '__main__':
                                'Viral Load Test within 1 Month of Diagnosis (/100k pop']  
     }
 
-    if os.path.exists('./Results/saved_results.rda'):
-        pass
-    else:
-        import gdown
-        import zipfile
 
-        output = "./R_Results.zip"
-        gdown.download(
-            "https://drive.google.com/uc?export=download&confirm=pbef&id=1Z2mroWg8_wwRdO7rYT1kqVVU7vUGbVqA",
-            output
-        )
-
-        with zipfile.ZipFile('./R_Results.zip', 'r') as zip_ref:  # zip file needs to be unzipped
-            zip_ref.extractall('./')  # destination directory
 
     Scenario_Analysis(param_MLC)
     
