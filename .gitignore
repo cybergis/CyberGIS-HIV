@@ -1,5 +1,6 @@
 Results.zip
-Results
+Results/saved_results.rda
+Results/.Rhistory
 /template/.ipynb_checkpoints/
 /attributes/.ipynb_checkpoints/
 .DS_Store
