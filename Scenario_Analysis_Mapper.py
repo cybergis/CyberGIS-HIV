@@ -59,6 +59,8 @@ else:
     import zipfile
 
     # Download file from Google Drive
+    # Stored at CIGI-CyberGIS > Teams >  CyberGIS-Viz-SocialMedia > WWW > CyberGIS-HIV > Results.zip
+    # The zipfile has `saved_results.rda`.
     output = "./R_Results.zip"
     gdown.download(
         "https://drive.google.com/uc?export=download&confirm=pbef&id=1Z2mroWg8_wwRdO7rYT1kqVVU7vUGbVqA",
