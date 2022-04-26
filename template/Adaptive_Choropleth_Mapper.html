@@ -88,8 +88,8 @@
 		<span>
 			<button type="submit" id="submitForm" style="margin:10px 10px 10px 0px; float:left">Submit form</button>
 		</span>
-		<button type="submit" id="initFiveMaps" style="margin:10px 10px 10px 0px; float:left" hidden>Initialize all maps</button>
-		<div id="global-selection" style="margin:1px 0px 1px 30px; float:left; height:55px; border: 1px solid #99CCFF; border-radius: 5px;" hidden>
+		<button type="submit" id="initFiveMaps" style="margin:10px 10px 10px 0px; float:left" hidden>Reset</button>
+		<div id="global-selection" style="margin:1px 0px 1px 30px; float:left; height:55px; border: 0px solid #99CCFF; border-radius: 5px;" hidden>
 			<table>
 				<tr>
 					<td><div id="global_layer" style="margin:3px 0px 0px 15px;"></div><td>
@@ -100,16 +100,16 @@
 						<div id="global_color" style="margin:0px 0px 0px 15px;"></div>
 					<td>
 					<td>
-						<div id="local_img" style="margin:3px 0px 0px 10px;"></div>
-						<div id="local_color" style="margin:0px 0px 0px 10px;"></div>
+						<div id="local_img" style="margin:3px 0px 0px 15px;"></div>
+						<div id="local_color" style="margin:3px 0px 0px 15px;"></div>
 					<td>
 					<td><div id="global_join" style="margin:3px 10px 0px 15px;"></div><td>
-					<td><button id="global_submit" type="submit" style="margin:5px 20px 0px 10px;">Set Globally</button><td>
+					<td><button id="global_submit" type="submit" style="margin:5px 20px 0px 10px;">Submit</button><td>
 				</tr>
 			</table>
 		</div>	
 	</div>
-	<div id="global-message" style="margin: 0px 160px; width:1100px; color:blue; font-size: smaller; clear:both;" hidden><i>The selections above are valid only after you click "Set Globally" button. To enable "Set Globally", make all maps have the same extents by clicking one of "Link" buttons below.</i></div>
+	<div id="global-message" style="margin: 0px 160px; width:1100px; color:blue; font-size: smaller; clear:both;" hidden><i>The selections above are valid only after you click "Submit" button. To enable "Submit", make all maps have the same extents by clicking one of "Link" buttons below.</i></div>
 	</section>
 	
 	<br><br>
@@ -331,9 +331,9 @@ function draw_titlemap(mIDX, layer) {
 	//var html_layer = ' Map'+(mIDX.replace('map','')*1+1)+' &nbsp; &nbsp;Layer: <select name="ACSdata" class="ACSdataSelect" onChange="layer_change(\'' + mIDX + '\')">';
 	
 	if (!isNaN(mIDX.replace('map','')))								 // Is number?
-		$("#"+mIDX+" .map_id").html('&nbsp;<b>Map'+(mIDX.replace('map','')*1+1)+'</b>');
-	
-	var html_layer = 'Layer: <select name="ACSdata" class="ACSdataSelect" onChange="layer_change(\'' + mIDX + '\')">';
+		//$("#"+mIDX+" .map_id").html('&nbsp;<b>Map'+(mIDX.replace('map','')*1+1)+'</b>');
+	//var html_layer = 'Layer: <select name="ACSdata" class="ACSdataSelect" onChange="layer_change(\'' + mIDX + '\')">';
+	var html_layer = '<strong>Select Variable and Year: </strong><select name="ACSdata" class="ACSdataSelect" onChange="layer_change(\'' + mIDX + '\')">';
 	$.each(app.titles, function(gIdx, title) {
 		if (gIdx < 1 && layer != title) return true;
 		if (title != layer) {
@@ -383,8 +383,9 @@ function draw_titlemap(mIDX, layer) {
 	if (app.MapWidth.replace('px','') < 400) leaveGroup = "Leave";
 	//console.log("app.MapWidth:", app.MapWidth, "    leaveGroup:", leaveGroup, "    fontSize:", fontSize)
 	var html_syncbtn = '';
+	
 	//html_syncbtn += '<span id="'+mIDX+'_nPolygon" style="' + fontSize + ' display: none;"></span>';
-	html_syncbtn += '<span id="'+mIDX+'_nPolygon" style="' + fontSize + '"></span>';
+	html_syncbtn += '<span style="display:none"><span id="'+mIDX+'_nPolygon" style="' + fontSize + '"></span>';
 	html_syncbtn += '<span style="' + fontSize + '">&nbsp;&nbsp;</span>';
 	html_syncbtn += '<span style="' + fontSize + '">';
 	//html_syncbtn += '  <input id="'+mIDX+'_auto" type="radio" value="auto" name="'+mIDX+'-radio">';
@@ -396,7 +397,8 @@ function draw_titlemap(mIDX, layer) {
 	html_syncbtn += '  <input id="'+mIDX+'_manual" type="radio" value="manual" name="'+mIDX+'-radio" checked="checked">';
 	//html_syncbtn += '  <input id="'+mIDX+'_manual" type="radio" value="manual" name="'+mIDX+'-radio">';
 	html_syncbtn += '  <label for="'+mIDX+'_manual">' + leaveGroup + '</label>';
-	html_syncbtn += '</span>';
+	html_syncbtn += '</span></span>';
+	
 	html_syncbtn += '<span style="' + fontSize + '">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
 	html_syncbtn += '<button id="'+mIDX+'_syncbtn" type="button">Link</button>'
 	$("#"+mIDX+" .map_sync").html(html_syncbtn);
@@ -592,7 +594,8 @@ function draw_titleTop10chart(mapN=null) {
 
 
 function draw_titleComparisionLineChart(mapN=null) {
-	var chartID = (app.subject) ? "Comparision Line Chart of " + app.subject_CLC : "Comparision Line Chart";
+	//var chartID = (app.subject) ? "Comparision Line Chart of " + app.subject_CLC : "Comparision Line Chart";
+	var chartID = (app.subject) ? "" + app.subject_CLC : "Comparision Line Chart";
 	$("#CLCchart .map_id").html('&nbsp;<b>'+chartID+'</b>');
 	//var html_check = '	 <input id="CLCchart-fixAxes" type="checkbox" name="CLCchart_fixAxes" value="Fix Axes">' +
 	//				 '   <label for="fixAxes">Fix Axes</label>';
@@ -628,6 +631,8 @@ function draw_titleComparisionLineChart(mapN=null) {
 
 function draw_titleMultipleLineChart() {
 	var chartID = (app.subject) ? "Multiple Synchronized Line Chart of " + app.subject_MLC : "Multiple Synchronized Line Chart";
+	var chartID = (app.subject) ? "" + app.subject_MLC : "Multiple Synchronized Line Chart";
+
 	//$("#MLCchart .map_id").html('&nbsp;<b>'+chartID+'</b>');
 	$("#MLCchart .map_id").html('&nbsp;<b>'+chartID+'</b> ' + app.subtext);  
    
@@ -849,7 +854,8 @@ function updateGloballyButton() {
 function draw_globalSelection() {
 	
 	// set drop-down list of 'global_layer' 
-	var html_layer = 'Layer: <select name="globalLayer" class="ACSdataSelect" style="color:red;">';
+	//var html_layer = 'Layer: <select name="globalLayer" class="ACSdataSelect" style="color:red;" >';
+	var html_layer = '<select name="globalLayer" class="ACSdataSelect" style="color:red;display:none" >';
 	html_layer += '<option value="none" class="line_none">No Select</option>';
 	html_layer += '<option value="each" class="line_none">Default </option>';
 	var theLayer = "";
@@ -878,7 +884,8 @@ function draw_globalSelection() {
 	}
 
 	// set drop-down list of 'global_class' 
-	var html_layer = 'Classification: <select name="globalClass" style="color:red;">' +
+	//var html_layer = 'Classification: <select name="globalClass" style="color:red;">' +
+	var html_layer = '<select name="globalClass" style="color:red;display:none">' +
 					'<option value="equal" class="line_none">Equal</option>' +
 					'<option value="quantile" class="line_none" selected>Quantile</option>' +
 					'<option value="ckmeans" class="line_none">Natural Breaks</option>' +
@@ -890,7 +897,8 @@ function draw_globalSelection() {
 	app.globalClass = $("#global_class select[name=globalClass]").val();
 	
 	// set drop-down list of 'global_count' 
-	var html_count = '<select name="globalCount" style="color:red;">' +
+	//var html_count = '<select name="globalCount" style="color:red;">' +
+	var html_count = '<select name="globalCount" style="color:red;display:none">' +
 					'<option value="5" class="line_none">5</option>' +
 					'<option value="6" class="line_none">6</option>' + 
 					'<option value="7" class="line_none">7</option>' +
@@ -1133,8 +1141,8 @@ function globalHeadingRestore() {
 	
 	if (eCount > 0) {
 		message = 'Your selection in ' + message.substring(0, message.length-2) + ' ';
-		message += be + ' not valid because you have not clicked "Set Globally" button.\n\n';
-		message += 'To enable "Set Globally" button, ';
+		message += be + ' not valid because you have not clicked "Submit" button.\n\n';
+		message += 'To enable "Submit" button, ';
 		message += 'make all maps have the same extents by clicking one of "Link" buttons on the top of each map.';
 		swal({
 			title: "Attention!",
@@ -3628,10 +3636,13 @@ function paintComparisionLineChart({mapN="", lassoData="", lassoedMap="", eventD
     
     // append title with variable
     //var chartID = (app.subject) ? "Comparision Line Chart : " + app.subject : "Comparision Line Chart";
-	var chartID = "Comparision Line Chart";
-    if (title_CLCvariables.length > 0) chartID += " of " + 
+	//var chartID = "Comparision Line Chart";
+	var chartID = Subject_CLC + Subtext;
+    /*
+	if (title_CLCvariables.length > 0) chartID += " of " + 
         "<span style='color:blue;font-size:larger;'>&nbsp;" + title_CLCvariables + "</span>"
 		 + ' ' + app.subtext;
+	*/
 	$("#CLCchart .map_id").html('&nbsp;<b>'+chartID+'</b>');
 	
 	//const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length

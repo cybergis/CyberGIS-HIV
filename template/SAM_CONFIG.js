@@ -1,8 +1,8 @@
 // Define subject of this visaulize
 //var Subject = "";
 var Subject = "";
-var Subject_MLC = "HIV Rate and Affecting Factors";
-var Subject_CLC = "Temporal Patterns";
+var Subject_MLC = "Compare HIV rates between two counties";
+var Subject_CLC = "Compare the key predictors of HIV rate across counties";
 var Subject_PCP = "Relationship between HIV and Related Factors";
 var Subtext = "<font color='grey' size='-1'>&nbsp;&nbsp;(Highlighted Area: Predicted Values)</font>";
 
@@ -22,6 +22,7 @@ var NumOfCLC = 15;
 //var InitialVariableCLC = ["2012_HIV Rate", "2013_HIV Rate", "2014_HIV Rate", "2015_HIV Rate", "2016_HIV Rate", "2017_HIV Rate", "2018_HIV Rate", "2019_HIV Rate", "2020_HIV Rate", "2021_HIV Rate", "2022_HIV Rate"]
 //var InitialVariableCLC = [];
 var InitialVariableCLC = ["2012_HIV Rate", "2013_HIV Rate", "2014_HIV Rate", "2015_HIV Rate", "2016_HIV Rate", "2017_HIV Rate", "2018_HIV Rate", "2019_HIV Rate", "2020_HIV Rate", "2021_HIV Rate", "2022_HIV Rate", "2023_HIV Rate", "2024_HIV Rate", "2025_HIV Rate", "2026_HIV Rate"];
+var DefaultRegion_CLC = ["42101", "4013"];
 var HighlightCLC = [["2019", "2026", "#fdff32"]];
 
 
@@ -36,6 +37,7 @@ var InitialVariableMLC = []
 var titlesOfMLC = [];
 // Define beginning and ending of highlighted areas of MLC. You can do multiple times
 // [["begin_X_value","end_X_value","color"], ["begin_X_value","end_X_value","color"]…] 
+var DefaultRegion_MLC = "42101"; //Set highlighted ranges for x value
 var HighlightMLC = [["2022", "2026", "#fdff32"]];
 
 
