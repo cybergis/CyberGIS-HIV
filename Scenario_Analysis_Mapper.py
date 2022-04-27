@@ -427,6 +427,7 @@ def Scenario_Analysis(param, excludeOutliers):
     path.mkdir(parents=True, exist_ok=True)
     
     print('output directory :  {}'.format(oDir))
+    print('Creating Visualization ... ')
     write_INDEX_html(param, oDir)
     write_CONFIG_js(param, oDir)
     write_VARIABLES_js(param, oDir, excludeOutliers)
@@ -439,11 +440,11 @@ def Scenario_Analysis(param, excludeOutliers):
     #url = 'file:' + os.path.join(template_dir, fname)
     url = os.path.join(template_dir, fname)    
     webbrowser.open(url)
-    print('To see your visualization, click the URL below (or locate the files):')
+    print(f'Visualization URL: {url}')
     print(url)
-    print('To access all visualizations that you have created, click the URL below (or locate the files):')
+    print('Log: ')
     print(local_dir1 + '/log.html')
-    print('Advanced options are available in ')  
+    print('Advanced Parameters: ')
     print(local_dir2 + 'SAM_' + param['filename_suffix']+'/data/CONFIG_' + param['filename_suffix']+'.js')
 
     # Following line will pop up 'index.html' when the code runs (Only works in Jupyter Lab).
