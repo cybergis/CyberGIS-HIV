@@ -1,9 +1,9 @@
 // Define subject of this visaulize
 //var Subject = "";
 var Subject = "";
-var Subject_MLC = "Compare HIV rates between two counties";
-var Subject_CLC = "Compare the key predictors of HIV rate across counties";
-var Subject_PCP = "Relationship between HIV and Related Factors";
+var Subject_MLC = "Multiple Line Chart (MLC):  HIV rates and their key predictors over time";
+var Subject_CLC = "Comparison Line Chart (CLC): Compare HIV rates between two counties";
+var Subject_PCP = "Parallel Coordinates Plot (PCP): Compare the key predictors of HIV rate across counties";
 var Subtext = "<font color='grey' size='-1'>&nbsp;&nbsp;(Highlighted Area: Predicted Values)</font>";
 
 // Define the number of maps that you want to visualize. upto 15 maps are supported.
