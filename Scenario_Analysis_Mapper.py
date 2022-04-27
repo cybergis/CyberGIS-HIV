@@ -176,7 +176,7 @@ def write_VARIABLES_js(param, oDir, excludeOutliers):
     #else:
     #    data_wide = forecast_func()
     #print(data_wide)
-    data_wide.to_csv("output.csv")
+    # data_wide.to_csv("output.csv")
     
     columnsList = data_wide.columns.values.tolist()
     valuesList = data_wide.values.tolist()
@@ -442,10 +442,12 @@ def Scenario_Analysis(param, excludeOutliers):
     print('To see your visualization, click the URL below (or locate the files):')
     print(url)
     print('To access all visualizations that you have created, click the URL below (or locate the files):')
-    print(local_dir1 + '/log.html')    
+    print(local_dir1 + '/log.html')
     print('Advanced options are available in ')  
     print(local_dir2 + 'SAM_' + param['filename_suffix']+'/data/CONFIG_' + param['filename_suffix']+'.js')
-    display(Javascript('window.open("{url}");'.format(url=url)))
+
+    # Following line will pop up 'index.html' when the code runs (Only works in Jupyter Lab).
+    # display(Javascript('window.open("{url}");'.format(url=url)))
 
 # Display GUI
 def Display_GUI():
