@@ -440,12 +440,9 @@ def Scenario_Analysis(param, excludeOutliers):
     #url = 'file:' + os.path.join(template_dir, fname)
     url = os.path.join(template_dir, fname)    
     webbrowser.open(url)
-    print(f'Visualization URL: {url}')
-    print(url)
-    print('Log: ')
-    print(local_dir1 + '/log.html')
-    print('Advanced Parameters: ')
-    print(local_dir2 + 'SAM_' + param['filename_suffix']+'/data/CONFIG_' + param['filename_suffix']+'.js')
+    print(f'Visualization: {url}')
+    print(f"Log: {local_dir1 + '/log.html'}")
+    print(f"Advanced Parameters: {local_dir2 + 'SAM_' + param['filename_suffix']+'/data/CONFIG_' + param['filename_suffix']+'.js'}")
 
     # Following line will pop up 'index.html' when the code runs (Only works in Jupyter Lab).
     # display(Javascript('window.open("{url}");'.format(url=url)))
@@ -468,7 +465,7 @@ def Display_GUI():
     # Basic parameters
     basic = VBox([
         Box([Label(value='How do you want to name the result?', layout=Layout(width="300px")),
-            Text(value="HIV_MLC")], layout=form_item_layout),
+            Text(value="HIV")], layout=form_item_layout),
     
         Box([Label(value='Variable'), Label(value='Weight')], layout=form_item_layout),
     
@@ -503,7 +500,7 @@ def Display_GUI():
         Label(value=""),
         
         Box([Label(value='How do you want to see them?', layout=Layout(width="300px")), 
-            RadioButtons(options=['Multiple Line Chart', "Comparison Line Chart", "Parallel Coordinates Plot", "Don't display"])],
+            RadioButtons(options=['Multiple Line Chart', "Comparison Line Chart", "Parallel Coordinates Plot", "No Extra Plot"])],
             layout=form_item_layout),
     ])
 
@@ -625,17 +622,17 @@ def Display_GUI():
     
     display(tab)
     
-    def additional_chart_change(change):
-        if change.new == 'Multiple Line Chart':
-            basic.children[0].children[1].value = 'HIV_MLC'
-        elif change.new == 'Comparison Line Chart':
-            basic.children[0].children[1].value = 'HIV_CLC'
-        elif change.new == 'Parallel Coordinates Plot':
-            basic.children[0].children[1].value = 'HIV_PCP'
-        elif change.new == "Don't display":
-            basic.children[0].children[1].value = 'HIV'
-            
-    basic.children[4].children[1].observe(additional_chart_change, names='value')
+    # def additional_chart_change(change):
+    #     if change.new == 'Multiple Line Chart':
+    #         basic.children[0].children[1].value = 'HIV_MLC'
+    #     elif change.new == 'Comparison Line Chart':
+    #         basic.children[0].children[1].value = 'HIV_CLC'
+    #     elif change.new == 'Parallel Coordinates Plot':
+    #         basic.children[0].children[1].value = 'HIV_PCP'
+    #     elif change.new == "Don't display":
+    #         basic.children[0].children[1].value = 'HIV'
+    #
+    # basic.children[4].children[1].observe(additional_chart_change, names='value')
     
     submit_button = Button(description="Create Visualization", button_style='success')
     help_button = Button(description="I Need Help", button_style="info")
