@@ -504,7 +504,7 @@ def Display_GUI():
             layout=form_item_layout),
     ])
 
-    # Optional parameters
+    # Advanced parameters
     optional = VBox([
         Box([Label(value='Title', layout=Layout(width="300px")),
             Textarea(value="HIV Scenario Analysis from 2012 to 2026, United States", layout=Layout(width="221px"))], 
