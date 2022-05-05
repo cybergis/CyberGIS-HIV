@@ -51,26 +51,6 @@ cwd = cwd.replace(prefix_cwd, "")
 local_dir1 = servers1 + cwd + '/'
 local_dir2 = servers2 + cwd + '/'
 
-# ### DOWNLOAD `saved_results.rda` from Google drive
-# if os.path.exists('./Results/saved_results.rda'):
-#     pass
-# else:
-#     import gdown
-#     import zipfile
-#
-#     # Download file from Google Drive
-#     # Stored at CIGI-CyberGIS > Teams >  CyberGIS-Viz-SocialMedia > WWW > CyberGIS-HIV > Results.zip
-#     # The zipfile has `saved_results.rda`.
-#     output = "./R_Results.zip"
-#     gdown.download(
-#         "https://drive.google.com/uc?export=download&confirm=pbef&id=1Z2mroWg8_wwRdO7rYT1kqVVU7vUGbVqA",
-#         output
-#     )
-#
-#     # Unzip the downloaded file from Google Drive
-#     with zipfile.ZipFile('./R_Results.zip', 'r') as zip_ref:  # zip file needs to be unzipped
-#         zip_ref.extractall('./')  # destination directory
-
 
 def write_INDEX_html(param, oDir):
     #open Adaptive_Choropleth_Mapper.html (the excutable file for the visualization)
@@ -785,26 +765,6 @@ def createVisualization(basic, optional):
     
 if __name__ == '__main__':
 
-    ### DOWNLOAD `saved_results.rda` from Google drive
-    if os.path.exists('./Results/saved_results.rda'):
-        pass
-    else:
-        import gdown
-        import zipfile
-
-        # Download file from Google Drive
-        # Stored at CIGI-CyberGIS > Teams >  CyberGIS-Viz-SocialMedia > WWW > CyberGIS-HIV > Results.zip
-        # The zipfile has `saved_results.rda`.
-        output = "./R_Results.zip"
-        gdown.download(
-            "https://drive.google.com/uc?export=download&confirm=pbef&id=1Z2mroWg8_wwRdO7rYT1kqVVU7vUGbVqA",
-            output
-        )
-
-        # Unzip the downloaded file from Google Drive
-        with zipfile.ZipFile('./R_Results.zip', 'r') as zip_ref:  # zip file needs to be unzipped
-            zip_ref.extractall('./')  # destination directory
-
     started_datetime = datetime.now()
     print('Scenario_Analysis_Mapper start at %s' % (started_datetime.strftime('%Y-%m-%d %H:%M:%S')))
     
@@ -942,5 +902,27 @@ if __name__ == '__main__':
     hours, remainder = divmod(total_seconds,60*60)
     minutes, seconds = divmod(remainder,60)	
     print('Scenario_Analysis_Mapper ended at %s    Elapsed %02d:%02d:%02d' % (ended_datetime.strftime('%Y-%m-%d %H:%M:%S'), hours, minutes, seconds))
+
+else:
+    ### DOWNLOAD `saved_results.rda` from Google drive
+    if os.path.exists('./Results/saved_results.rda'):
+        pass
+    else:
+        import gdown
+        import zipfile
+
+        # Download file from Google Drive
+        # Stored at CIGI-CyberGIS > Teams >  CyberGIS-Viz-SocialMedia > WWW > CyberGIS-HIV > Results.zip
+        # The zipfile has `saved_results.rda`.
+        output = "./R_Results.zip"
+        gdown.download(
+            "https://drive.google.com/uc?export=download&confirm=pbef&id=1Z2mroWg8_wwRdO7rYT1kqVVU7vUGbVqA",
+            output
+        )
+
+        # Unzip the downloaded file from Google Drive
+        with zipfile.ZipFile('./R_Results.zip', 'r') as zip_ref:  # zip file needs to be unzipped
+            zip_ref.extractall('./')  # destination directory
+
 
 
