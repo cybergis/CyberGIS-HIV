@@ -434,7 +434,7 @@ def Display_GUI():
     form_item_layout = Layout(
     display='flex',
     flex_flow='row',
-    width='450px',
+    width='500px',
     justify_content='space-between'
     )
 
@@ -451,38 +451,39 @@ def Display_GUI():
     
         Box([Label(value='Variable'), Label(value='Weight')], layout=form_item_layout),
     
-        VBox([HBox([Label(value='Opioid Prescriptions', layout=Layout(width="400px")),
+        VBox([HBox([Label(value='Opioid Prescriptions', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='% People as Food Stamp/SNAP Recipients', layout=Layout(width="400px")),
+            HBox([Label(value='% People as Food Stamp/SNAP Recipients', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='% POP in Juvenille Facilities', layout=Layout(width="400px")),
+            HBox([Label(value='% POP in Juvenille Facilities', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='Federally Qualified Health Centers', layout=Layout(width="400px")),
+            HBox([Label(value='Federally Qualified Health Centers', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='NHSC Primary Care sites', layout=Layout(width="400px")),
+            HBox([Label(value='NHSC Primary Care sites', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='Knowledge of HIV Status', layout=Layout(width="400px")),
+            HBox([Label(value='Knowledge of HIV Status', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='HCV Death', layout=Layout(width="400px")),
+            HBox([Label(value='HCV Death', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='HIV Test', layout=Layout(width="400px")),
+            HBox([Label(value='HIV Test', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='Community Mental Health Centers', layout=Layout(width="400px")),
+            HBox([Label(value='Community Mental Health Centers', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='PrEP Use', layout=Layout(width="400px")),
+            HBox([Label(value='PrEP Use', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='% of Households with Social Security Income', layout=Layout(width="400px")),
+            HBox([Label(value='% of Households with Social Security Income', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='Illicit Drug Use Rate', layout=Layout(width="400px")),
+            HBox([Label(value='Illicit Drug Use Rate', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),
-            HBox([Label(value='Linkage to HIV Care', layout=Layout(width="400px")),
+            HBox([Label(value='Linkage to HIV Care', layout=Layout(width="450px")),
             BoundedIntText(min=1, max=10, value=1, layout=Layout(width="50px"))]),],
-            layout=Layout(width='450px', border='dashed 1px')),
+            layout=Layout(width='500px', border='dashed 1px')),
     
         Label(value=""),
         
-        Box([Label(value='How do you want to see them?', layout=Layout(width="300px")), 
-            RadioButtons(options=['Multiple Line Chart', "Comparison Line Chart", "Parallel Coordinates Plot", "No Extra Plot"])],
+        Box([Label(value='What do you want to visualize?', layout=Layout(width="300px")), 
+            RadioButtons(options=['Plot multiple variables of a county', "Plot a variable of two counties", 
+                                  "Plot a variable of multiple counties", "No Extra Plot"])],
             layout=form_item_layout),
     ])
 
@@ -616,7 +617,7 @@ def Display_GUI():
     #
     # basic.children[4].children[1].observe(additional_chart_change, names='value')
     
-    submit_button = Button(description="Create Visualization", button_style='success')
+    submit_button = Button(description="Run Model", button_style='success')
     help_button = Button(description="I Need Help", button_style="info")
     
     buttons = HBox([submit_button, Label(value='', layout=Layout(width='20px')), help_button])
