@@ -482,8 +482,8 @@ def Display_GUI():
         Label(value=""),
         
         Box([Label(value='What do you want to visualize?', layout=Layout(width="300px")), 
-            RadioButtons(options=['Plot multiple variables of a county', "Plot a variable of two counties", 
-                                  "Plot a variable of multiple counties", "No Extra Plot"])],
+            RadioButtons(options=["Multiple Line Chart", "Comparison Line Chart", "Parallel Coordinates Plot", 
+                                  "No Extra Plot"])],
             layout=form_item_layout),
     ])
 
