@@ -637,7 +637,7 @@ def Display_GUI():
     @output.capture()
     def helpbuttonClicked(button):
         
-        url = "http://su-gis.iptime.org/LNE/pick_POI.html"
+        url = "http://su-gis.iptime.org/SAM-Documentation/docs/build/html/index.html"
         display(Javascript('window.open("{url}");'.format(url=url)))
         return
     
