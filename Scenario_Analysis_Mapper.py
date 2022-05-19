@@ -637,7 +637,7 @@ def Display_GUI():
     @output.capture()
     def helpbuttonClicked(button):
         
-        url = "http://su-gis.iptime.org/SAM-Documentation/docs/build/html/index.html"
+        url = "http://su-gis.iptime.org/HIV/index.html"
         display(Javascript('window.open("{url}");'.format(url=url)))
         return
     
