@@ -6,7 +6,7 @@ library("reshape2")
 
 dir <- paste0(getwd(), "/")
 dir.data <- paste0(dir, "Data/")
-dir.results <- paste0(dir, "Results/")
+dir.results <- '/home/jovyan/shared_data/data/hiv/' # Keeling directory that has "saved_results.rda"
 source(paste0(dir, "Functions_Formatting.R"))
 setwd(dir)
 
