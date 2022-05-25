@@ -18,6 +18,7 @@ from sklearn.preprocessing import minmax_scale
 import numpy as np
 from scipy import stats
 from notebook import notebookapp
+# from jupyter_server import serverapp
 from IPython.core.display import display, HTML
 from IPython.display import Javascript
 import geopandas as gpd
@@ -28,14 +29,18 @@ from IPython.display import clear_output
 from ipywidgets import Layout, Button, Box, FloatText, Textarea, Dropdown, Label, IntSlider, RadioButtons, VBox, HBox, Text, BoundedIntText
 import ipywidgets as widgets
 
-## Define Paths for Visualization
-servers = list(notebookapp.list_running_servers())
-# servers1 = 'https://cybergisx.cigi.illinois.edu'+servers[0]["base_url"]+ 'view'
-# servers2 = 'https://cybergisx.cigi.illinois.edu'+servers[0]["base_url"]+ 'edit'
+## Retrieve Server URL that Jupyter is running
 
 jupyter_envs = {k: v for k, v in os.environ.items() if k.startswith('JUPYTER')}
 temp_server = jupyter_envs['JUPYTER_INSTANCE_URL']
 
+## Define Paths for Visualization (Jupyter Lab)
+# servers = list(serverapp.list_running_servers())
+# servers1 = temp_server+servers[0]["base_url"]+ 'view'
+# servers2 = temp_server+servers[0]["base_url"]+ 'edit'
+
+## Define Paths for Visualization (Julyter Notebook)
+servers = list(notebookapp.list_running_servers())
 servers1 = temp_server+servers[0]["base_url"]+ 'view'
 servers2 = temp_server+servers[0]["base_url"]+ 'edit'
 
