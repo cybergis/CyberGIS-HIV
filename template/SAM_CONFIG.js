@@ -23,7 +23,7 @@ var NumOfCLC = 15;
 //var InitialVariableCLC = [];
 var InitialVariableCLC = ["2012_HIV Rate", "2013_HIV Rate", "2014_HIV Rate", "2015_HIV Rate", "2016_HIV Rate", "2017_HIV Rate", "2018_HIV Rate", "2019_HIV Rate", "2020_HIV Rate", "2021_HIV Rate", "2022_HIV Rate", "2023_HIV Rate", "2024_HIV Rate", "2025_HIV Rate", "2026_HIV Rate"];
 var DefaultRegion_CLC = ["42101", "4013"];
-var HighlightCLC = [["2019", "2026", "#fdff32"]];
+var HighlightCLC = [["2021", "2026", "#fdff32"]];
 
 
 // Define the number of variable that you want to visualize Multiple Synchronized Line Chart.
