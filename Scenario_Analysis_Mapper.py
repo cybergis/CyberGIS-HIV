@@ -563,7 +563,7 @@ def Display_GUI():
                            "% of Households with Social Security Income,"\
                            "Illicit Drug Use Rate,"\
                            "Linkage to Care", layout=Layout(width="221px"))]),
-            HBox([Label(value='Highlight Method', layout=Layout(width="300px")), Text(value="2019,2026,#fdff32")]),
+            HBox([Label(value='Highlight Method', layout=Layout(width="300px")), Text(value="2021,2026,#fdff32")]),
             Label(value='Note: The value of "Number of MLC(s)" should be matched with the counts'),
             Label(value='of variables in "Selected Variables".')],
             layout=Layout(width='450px', border='dashed 1px')),
