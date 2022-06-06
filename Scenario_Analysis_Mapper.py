@@ -17,8 +17,8 @@ import pprint
 from sklearn.preprocessing import minmax_scale
 import numpy as np
 from scipy import stats
-from notebook import notebookapp
-# from jupyter_server import serverapp
+# from notebook import notebookapp
+from jupyter_server import serverapp
 from IPython.core.display import display, HTML
 from IPython.display import Javascript
 import geopandas as gpd
@@ -34,15 +34,15 @@ import ipywidgets as widgets
 jupyter_envs = {k: v for k, v in os.environ.items() if k.startswith('JUPYTER')}
 temp_server = jupyter_envs['JUPYTER_INSTANCE_URL']
 
-## Define Paths for Visualization (Jupyter Lab)
-# servers = list(serverapp.list_running_servers())
-# servers1 = temp_server+servers[0]["base_url"]+ 'view'
-# servers2 = temp_server+servers[0]["base_url"]+ 'edit'
-
-## Define Paths for Visualization (Julyter Notebook)
-servers = list(notebookapp.list_running_servers())
+# Define Paths for Visualization (Jupyter Lab)
+servers = list(serverapp.list_running_servers())
 servers1 = temp_server+servers[0]["base_url"]+ 'view'
 servers2 = temp_server+servers[0]["base_url"]+ 'edit'
+
+## Define Paths for Visualization (Julyter Notebook)
+# servers = list(notebookapp.list_running_servers())
+# servers1 = temp_server+servers[0]["base_url"]+ 'view'
+# servers2 = temp_server+servers[0]["base_url"]+ 'edit'
 
 cwd = os.getcwd()
 prefix_cwd = "/home/jovyan/work"
