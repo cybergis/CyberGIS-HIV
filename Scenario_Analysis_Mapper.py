@@ -642,7 +642,7 @@ def Display_GUI():
     @output.capture()
     def helpbuttonClicked(button):
         
-        url = "http://su-gis.iptime.org/HIV/index.html"
+        url = "https://cybergis.github.io/CyberGIS_HIV_document/build/html/index.html"
         display(Javascript('window.open("{url}");'.format(url=url)))
         return
     
