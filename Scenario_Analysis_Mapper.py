@@ -38,6 +38,7 @@ temp_server = jupyter_envs['JUPYTER_INSTANCE_URL']
 servers = list(serverapp.list_running_servers())
 servers1 = temp_server+servers[0]["base_url"]+ 'view'
 servers2 = temp_server+servers[0]["base_url"]+ 'edit'
+servers3 = temp_server+servers[0]["base_url"]+ 'files'
 
 ## Define Paths for Visualization (Julyter Notebook)
 # servers = list(notebookapp.list_running_servers())
@@ -55,6 +56,7 @@ cwd = cwd.replace(prefix_cwd, "")
 # This is for CyberGISX. Uncomment two command lines below when you run in CyberGIX Environment
 local_dir1 = servers1 + cwd + '/'
 local_dir2 = servers2 + cwd + '/'
+local_dir3 = servers3 + cwd + '/'
 
 
 def write_INDEX_html(param, oDir):
@@ -154,14 +156,17 @@ def write_VARIABLES_js(param, oDir, excludeOutliers):
     forecast_param = param['Scenario'] if ('Scenario' in param) else {}
     if ('inputCSV' in param): forecast_param['var_file'] = param['inputCSV']
     data_wide = forecast_func(**forecast_param)
-    #if ('Scenario' in param):
-    #    #data_wide = forecast_func(var_names=param['Scenario']['var_names'], var_muls=param['Scenario']['var_muls'])
-    #    #data_wide = forecast_func(var_file=param['Scenario']['var_file'], var_muls=None)
-    #    data_wide = forecast_func(**param['Scenario'])
-    #else:
-    #    data_wide = forecast_func()
-    #print(data_wide)
-    # data_wide.to_csv("output.csv")
+    if ('Scenario' in param):
+       #data_wide = forecast_func(var_names=param['Scenario']['var_names'], var_muls=param['Scenario']['var_muls'])
+       #data_wide = forecast_func(var_file=param['Scenario']['var_file'], var_muls=None)
+       data_wide = forecast_func(**param['Scenario'])
+    else:
+       data_wide = forecast_func()
+
+    # Convert FIPS code to string to have leading zeros (e.g., 1111 -> 01111)
+    data_wide['FIPS'] = data_wide['FIPS'].astype(str)
+    data_wide['FIPS'] = data_wide.apply(lambda x: '0'+ x['FIPS'] if len(x['FIPS']) == 4 else x['FIPS'], axis=1)
+    data_wide.to_excel(f"./{oDir}/data/{oDir}_output.xlsx") # Will be saved as a excel file in the output directory
     
     columnsList = data_wide.columns.values.tolist()
     valuesList = data_wide.values.tolist()
@@ -428,6 +433,7 @@ def Scenario_Analysis(param, excludeOutliers):
     print(f'Visualization: {url}')
     print(f"Log: {local_dir1 + '/log.html'}")
     print(f"Advanced Parameters: {local_dir2 + 'SAM_' + param['filename_suffix']+'/data/CONFIG_' + param['filename_suffix']+'.js'}")
+    print(f"Download Results: {local_dir3 + 'SAM_' + param['filename_suffix']+'/data/SAM_' + param['filename_suffix']+'_output.xlsx'}")
 
     # Following line will pop up 'index.html' when the code runs (Only works in Jupyter Lab).
     # display(Javascript('window.open("{url}");'.format(url=url)))

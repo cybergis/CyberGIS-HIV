@@ -198,7 +198,7 @@ forecast_func <- function(FIPS_list = NULL, var_names = NULL, var_muls = NULL, v
 
   #write.csv(data_wide, paste0(dir.data, "data_wide.csv"), row.names = FALSE)
   end_time <- Sys.time()
-  print(end_time - start_time)
+  # print(end_time - start_time)
   return(data_wide)
 }
 
