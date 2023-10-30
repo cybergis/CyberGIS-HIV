@@ -589,10 +589,13 @@ def Display_GUI():
     
         Label(value='If Parallel Coordinate Plot (PCP) is Displayed:'),
     
-        VBox([HBox([Label(value='Number of PCP(s)', layout=Layout(width="300px")), Text(value="15")]),
+        VBox([HBox([Label(value='Number of PCP(s)', layout=Layout(width="300px")), Text(value="9")]),
+            '''
             HBox([Label(value='Selected Variables', layout=Layout(width="300px")), Textarea(value="2012_HIV Rate,2013_HIV Rate,"\
             "2014_HIV Rate,2015_HIV Rate,2016_HIV Rate,2017_HIV Rate,2018_HIV Rate,2019_HIV Rate,2020_HIV Rate,2021_HIV Rate,2022_HIV Rate,"\
             "2023_HIV Rate,2024_HIV Rate,2025_HIV Rate,2026_HIV Rate", layout=Layout(width="221px"))]),
+            '''
+            HBox([Label(value='Selected Variables', layout=Layout(width="300px")), Textarea(value="2013_PrEP Use,2013_HIV Rate,2013_% people as Food Stamp/SNAP Recipients,2013_HCV Death,2013_Community Mental Health centers, 2013_Federally Qualified Health Centers, 2013_NHSC Primary Care sites, 2013_Opioid Prescriptions,  2013_% POP in Juvenille Facilities", layout=Layout(width="221px"))]),            
             Label(value='Note: The value of "Number of PCP(s)" should be matched with the counts'),
             Label(value='of variables in "Selected Variables".')],
             layout=Layout(width='450px', border='dashed 1px')),
