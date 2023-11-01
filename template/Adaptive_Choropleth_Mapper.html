@@ -2307,7 +2307,8 @@ function draw_all_maps() {
 	$(".mapAreaLast").css("width", app.MapWidth);
 	$(".map").css("width", app.MapWidth);
 	$(".map").css("height", app.MapHeight);
-
+	$("#mapContainer").css("height", app.MapHeight.replace('px','')*1+70+'px');
+	
 	// draw each base map
 	for (var i=0; i<app.m; i++) {
 		var mapN = "map" + i;
